@@ -11,6 +11,16 @@ module.exports = {
       fontFamily: {
         inter: "'Inter', sans-serif",
       },
+      keyframes: {
+        'stretch-animation': {
+          from: {
+            transform: 'translateY(0)',
+          },
+          to: {
+            transform: 'translateY(calc(-100% + 1px))',
+          },
+        },
+      },
     },
   },
   plugins: [

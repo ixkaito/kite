@@ -1,40 +1,60 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const selectedWorks = [
+  { title: 'JP Startups', slug: 'jp-startup' },
+  { title: 'HP Music School', slug: 'hpmusic-school' },
+  { title: 'Denkikogyo', slug: 'dkk' },
+  { title: 'FDM', slug: 'fdm' },
+  { title: 'Mijikana', slug: 'mijikana' },
+  { title: 'Next Stage', slug: 'nextstage' },
+  {
+    title: 'MKTG Sports + Entertainment',
+    slug: 'mktgse',
+  },
+  { title: 'KTRZ Monokai', slug: 'ktrz-monokai' },
+  { title: 'Dentsu Sports International', slug: 'dentsusports' },
+  { title: 'KTRZ FONT', slug: 'ktrz-font' },
+  {
+    title: 'KATSURAGAWA LADIES’ CLINIC',
+    slug: 'katsuragawa',
+  },
+  { title: 'Kitahama Partners', slug: 'kitahama' },
+  { title: 'LOK', slug: 'lok' },
+  {
+    title: 'FRANCFRANC BRAND IDENTITY GUIDELINES',
+    slug: 'francfranc',
+  },
+  { title: 'QUATRO PHOTO DESIGN', slug: 'quatro-photodesign' },
+];
 ---
 
 <Layout title="Kite">
-  <main class="pt-[max((100vh-max(4vw,3rem)*8.5-2rem),16rem)]">
+  <div
+    class="fixed bottom-[calc(max(4vw,3rem)*2)] -z-10 grid h-[calc(max(4vw,3rem)*4)] place-items-center overflow-hidden"
+  >
+    <figure class="h-px scale-y-[500] overflow-hidden">
+      <div
+        class="animate-[stretch-animation_var(--duration,150s)_linear_infinite]"
+        style={`--duration: ${selectedWorks.length * 10}s;`}
+      >
+        {
+          selectedWorks.map(({ slug }) => {
+            return <img src={`/images/works/${slug}.jpg`} />;
+          })
+        }
+      </div>
+    </figure>
+  </div>
+  <main
+    class="pt-[max((100vh-max(4vw,3rem)*8.5-2rem),16rem)] text-white mix-blend-difference"
+  >
     <h2 class="ml-4">Selected Works</h2>
     <ul
       class="mt-4 overflow-hidden whitespace-nowrap text-[max(4vw,3rem)] font-normal leading-none"
     >
       {
-        [
-          { title: 'JP Startups', slug: 'jp-startup' },
-          { title: 'HP Music School', slug: 'hpmusic-school' },
-          { title: 'Denkikogyo', slug: 'dkk' },
-          { title: 'FDM', slug: 'fdm' },
-          { title: 'Mijikana', slug: 'mijikana' },
-          { title: 'Next Stage', slug: 'nextstage' },
-          {
-            title: 'MKTG Sports + Entertainment',
-            slug: 'mktgse',
-          },
-          { title: 'KTRZ Monokai', slug: 'ktrz-monokai' },
-          { title: 'Dentsu Sports International', slug: 'dentsusports' },
-          { title: 'KTRZ FONT', slug: 'ktrz-font' },
-          {
-            title: 'KATSURAGAWA LADIES’ CLINIC',
-            slug: 'katsuragawa',
-          },
-          { title: 'Kitahama Partners', slug: 'kitahama' },
-          { title: 'LOK', slug: 'lok' },
-          {
-            title: 'FRANCFRANC BRAND IDENTITY GUIDELINES',
-            slug: 'francfranc',
-          },
-          { title: 'QUATRO PHOTO DESIGN', slug: 'quatro-photodesign' },
-        ].map(({ title, slug }, i, { length }) => {
+        selectedWorks.map(({ title, slug }, i, { length }) => {
           return (
             <li class="overflow-x-auto scrollbar-none">
               <a
