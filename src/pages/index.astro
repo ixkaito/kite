@@ -3,5 +3,52 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Kite">
-  <main></main>
+  <main class="pt-[max((100vh-max(4vw,3rem)*8.5-2rem),16rem)]">
+    <h2 class="ml-4">Selected Works</h2>
+    <ul
+      class="mt-4 overflow-hidden whitespace-nowrap text-[max(4vw,3rem)] font-normal leading-none"
+    >
+      {
+        [
+          { title: 'JP Startups', slug: 'jp-startup' },
+          { title: 'HP Music School', slug: 'hp-music-school' },
+          { title: 'Denkikogyo', slug: 'dkk' },
+          { title: 'FDM', slug: 'fdm' },
+          { title: 'Mijikana', slug: 'mijikana' },
+          { title: 'Next Stage', slug: 'nextstage-group' },
+          {
+            title: 'MKTG Sports + Entertainment',
+            slug: 'mktgse',
+          },
+          { title: 'KTRZ Monokai', slug: 'ktrz-monokai' },
+          { title: 'KTRZ FONT', slug: 'ktrz-font' },
+          {
+            title: 'KATSURAGAWA LADIES’ CLINIC',
+            slug: 'katsuragawa',
+          },
+          { title: 'Kitahama Partners', slug: 'kitahama' },
+          { title: 'LOK', slug: 'lok' },
+          {
+            title: 'FRANCFRANC BRAND IDENTITY GUIDELINES',
+            slug: 'francfranc',
+          },
+          { title: 'QUATRO PHOTO DESIGN', slug: 'quatro-photodesign' },
+        ].map(({ title, slug }, i, { length }) => {
+          return (
+            <li class="overflow-x-auto scrollbar-none">
+              <a
+                href={`/works/${slug}/`}
+                class="flex w-fit gap-4 overflow-hidden px-4"
+              >
+                <h3>{title}</h3>
+                <p class="text-base font-medium">
+                  {i + 1}/{length}
+                </p>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </main>
 </Layout>
