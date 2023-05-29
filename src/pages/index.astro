@@ -31,7 +31,7 @@ const selectedWorks = [
 
 <Layout title="Kite">
   <div
-    class="fixed inset-x-0 bottom-[calc(max(4vw,3rem)*2)] -z-10 grid h-[calc(max(4vw,3rem)*4)] origin-left animate-[loading-1_1s_both] place-items-center overflow-hidden animation-ease-in-expo"
+    class="fixed inset-x-0 bottom-[calc(max(4vw,3rem)*2)] z-bg grid h-[calc(max(4vw,3rem)*4)] origin-left animate-[loading-1_1s_both] place-items-center overflow-hidden animation-ease-in-expo"
   >
     <figure
       class="h-px w-full animate-[loading-2_1s_1s_both] overflow-hidden animation-ease-in-quart"
@@ -84,7 +84,7 @@ const selectedWorks = [
                     {i + 1}/{length}
                   </p>
                 </a>
-                <div class="invisible fixed inset-x-0 bottom-[calc(max(4vw,3rem)*2)] z-[-1] grid h-[calc(max(4vw,3rem)*4)] origin-left place-items-center overflow-hidden opacity-0 transition duration-300 peer-hover:visible peer-hover:opacity-100">
+                <div class="invisible fixed inset-x-0 bottom-[calc(max(4vw,3rem)*2)] z-bg-active grid h-[calc(max(4vw,3rem)*4)] origin-left place-items-center overflow-hidden opacity-0 transition duration-300 peer-hover:visible peer-hover:opacity-100">
                   <figure class="h-px w-full scale-y-[409.6] overflow-hidden">
                     <div class="animate-[stretch-animation_10s_1.8s_linear_infinite]">
                       <img

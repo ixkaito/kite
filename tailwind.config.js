@@ -47,6 +47,8 @@ module.exports = {
       },
       zIndex: {
         header: 99,
+        bg: -10,
+        'bg-active': -9,
       },
     },
   },
