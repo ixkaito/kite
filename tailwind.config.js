@@ -20,6 +20,22 @@ module.exports = {
             transform: 'translateY(calc(-100% + 1px))',
           },
         },
+        'loading-1': {
+          from: {
+            transform: 'scaleX(0)',
+          },
+          to: {
+            transform: 'scaleX(1)',
+          },
+        },
+        'loading-2': {
+          from: {
+            transform: 'scaleY(1)',
+          },
+          to: {
+            transform: 'scaleY(409.6)',
+          },
+        },
       },
       zIndex: {
         header: 99,
@@ -27,6 +43,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('tailwindcss-easing'),
     plugin(({ addUtilities }) => {
       addUtilities({
         '.scrollbar-none': {

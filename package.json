@@ -15,7 +15,8 @@
     "@astrojs/tailwind": "^3.1.2",
     "@studio-freight/lenis": "^1.0.13",
     "astro": "^2.4.4",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.2",
+    "tailwindcss-easing": "^0.2.1"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^5.59.5",
