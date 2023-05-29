@@ -28,6 +28,11 @@ const { title } = Astro.props;
   >
     <Header />
     <slot />
+    <fotter
+      class="fixed bottom-4 grid w-full grid-cols-3 px-4 text-white mix-blend-difference"
+    >
+      <p class="col-start-3">© 2023 Kite</p>
+    </fotter>
   </body>
 </html>
 
