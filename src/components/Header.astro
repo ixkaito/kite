@@ -14,7 +14,7 @@ const tagline = 'I Design, Develop and create crazy Things.';
       {
         [
           {
-            label: `<span>About</span><span aria-hidden="true">${tagline}</span>`,
+            label: `<span>About</span><span class="text-white group-hover:text-white" aria-hidden="true">${tagline}</span>`,
             slug: 'about',
           },
           {
@@ -57,7 +57,7 @@ const tagline = 'I Design, Develop and create crazy Things.';
           },
           {
             label:
-              '<span>Contact</span><span>#407 MST MINAMIMORIMACHI, 1-3-29 MINAMIMORIMACHI, KITA-KU, OSAKA 530-0054</span>',
+              '<span>Contact</span><span class="text-white group-hover:text-white">#407 MST MINAMIMORIMACHI, 1-3-29 MINAMIMORIMACHI, KITA-KU, OSAKA 530-0054</span>',
             slug: 'contact',
           },
         ].map(({ label, slug, sub }) => {
@@ -67,7 +67,7 @@ const tagline = 'I Design, Develop and create crazy Things.';
                 <a
                   href={`/${slug}/`}
                   set:html={label}
-                  class="flex flex-col gap-4 transition-opacity hover:opacity-40"
+                  class="group flex flex-col gap-4 transition hover:text-[#f00]"
                 />
               ) : (
                 <p>{label}</p>
@@ -89,7 +89,7 @@ const tagline = 'I Design, Develop and create crazy Things.';
                           <a
                             href={href}
                             target={target}
-                            class="transition-opacity hover:opacity-40"
+                            class="transition hover:text-[#f00]"
                           >
                             {label}
                           </a>
