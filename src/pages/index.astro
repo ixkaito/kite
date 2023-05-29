@@ -75,7 +75,8 @@ const selectedWorks = [
             <li class="overflow-x-auto scrollbar-none">
               <a
                 href={`/works/${slug}/`}
-                class="flex w-fit gap-4 overflow-hidden px-4"
+                class="flex w-fit animate-[slide-up_1s_var(--delay)_both] gap-4 overflow-hidden px-4 animation-ease-in-out"
+                style={`--delay: ${i * 0.05 + 1.7}s;`}
               >
                 <h3>{title}</h3>
                 <p class="text-base font-medium">

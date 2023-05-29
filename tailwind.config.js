@@ -36,6 +36,14 @@ module.exports = {
             transform: 'scaleY(409.6)',
           },
         },
+        'slide-up': {
+          from: {
+            transform: 'translateY(100%)',
+          },
+          to: {
+            transform: 'translateY(0)',
+          },
+        },
       },
       zIndex: {
         header: 99,
