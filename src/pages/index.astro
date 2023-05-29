@@ -47,11 +47,11 @@ const selectedWorks = [
     </figure>
   </div>
   <main
-    class="pt-[max((100vh-max(4vw,3rem)*8.5-2rem),16rem)] text-white mix-blend-difference"
+    class="grid gap-4 pt-[max((100vh-max(4vw,3rem)*8.5-2rem),16rem)] text-white mix-blend-difference"
   >
     <h2 class="ml-4">Selected Works</h2>
     <ul
-      class="mt-4 overflow-hidden whitespace-nowrap text-[max(4vw,3rem)] font-normal leading-none"
+      class="overflow-hidden whitespace-nowrap text-[max(4vw,3rem)] font-normal leading-none"
     >
       {
         selectedWorks.map(({ title, slug }, i, { length }) => {
@@ -71,5 +71,10 @@ const selectedWorks = [
         })
       }
     </ul>
+    <div class="flex min-h-screen items-end px-4 py-16">
+      <a class="text-[max(10vw,4rem)] font-normal leading-none" href="/contact/"
+        >Have A Plan? Let’s make it happen!</a
+      >
+    </div>
   </main>
 </Layout>
