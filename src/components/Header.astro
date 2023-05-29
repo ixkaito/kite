@@ -9,8 +9,8 @@ const tagline = 'I Design, Develop and create crazy Things.';
     <a href="/">Kite</a>
   </h1>
   <p class="sr-only">{tagline}</p>
-  <nav class="col-span-4 col-start-3">
-    <ul class="hidden grid-cols-4 gap-4 lg:grid">
+  <nav class="col-span-4 col-start-3 hidden lg:block">
+    <ul class="grid-cols-4 gap-4">
       {
         [
           {
@@ -104,9 +104,97 @@ const tagline = 'I Design, Develop and create crazy Things.';
         })
       }
     </ul>
-    <button class="grid gap-4 text-left uppercase lg:hidden">
-      <span>Menu</span>
-      <span aria-hidden="true">{tagline}</span>
-    </button>
   </nav>
+  <button
+    id="menu-toggle"
+    class="col-start-3 grid gap-4 text-left uppercase lg:hidden"
+    aria-expanded="false"
+    aria-controls="menu"
+  >
+    <span>Menu</span>
+    <span aria-hidden="true">{tagline}</span>
+  </button>
 </header>
+<nav
+  id="menu"
+  class="group fixed inset-0 z-menu overflow-hidden bg-zinc-800 px-4 pb-12 pt-[max((100vh-max(4vw,3rem)*8.5),16rem)] transition-all duration-500 ease-out-expo [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)] aria-hidden:[clip-path:polygon(0_100%,100%_100%,100%_100%,0_100%)] lg:hidden"
+  aria-hidden="true"
+>
+  <ul
+    class="text-[max(4vw,3rem)] font-normal leading-none text-white mix-blend-difference"
+  >
+    {
+      [
+        {
+          label: 'About',
+          slug: 'about',
+        },
+        {
+          label: 'Works',
+          slug: 'works',
+        },
+        {
+          label: 'Contact',
+          slug: 'contact',
+        },
+      ].map(({ label, slug }, i, { length }) => {
+        return (
+          <li class="overflow-hidden">
+            <a
+              href={`/${slug}/`}
+              class="flex gap-4 transition delay-[var(--delay)] duration-1000 ease-out-circ group-aria-hidden:translate-y-full"
+              style={`--delay: ${i * 0.1 + 0.2}s`}
+            >
+              {label}
+              <p class="text-base font-medium">
+                {i + 1}/{length}
+              </p>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+  <ul class="fixed bottom-4 text-white mix-blend-difference">
+    {
+      [
+        {
+          label: 'Twitter',
+          href: 'https://twitter.com/ixkaito',
+          target: '_blank',
+        },
+        {
+          label: 'Dribbble',
+          href: 'https://dribbble.com/ixkaito',
+          target: '_blank',
+        },
+        {
+          label: 'Zenn',
+          href: 'https://zenn.dev/ixkaito',
+          target: '_blank',
+        },
+      ].map(({ label, href, target }) => {
+        return (
+          <li>
+            <a href={href} target={target}>
+              {label}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', `${!expanded}`);
+      menu.setAttribute('aria-hidden', `${expanded}`);
+    });
+  }
+</script>

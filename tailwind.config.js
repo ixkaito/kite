@@ -3,6 +3,9 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     fontSize: {
       base: ['0.875rem', '1rem'],
@@ -46,7 +49,9 @@ module.exports = {
         },
       },
       zIndex: {
-        header: 99,
+        header: 100,
+        footer: 100,
+        menu: 99,
         bg: -10,
         'bg-active': -9,
       },
