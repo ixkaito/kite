@@ -21,6 +21,9 @@ module.exports = {
           },
         },
       },
+      zIndex: {
+        header: 99,
+      },
     },
   },
   plugins: [
