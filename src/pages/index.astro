@@ -31,16 +31,25 @@ const selectedWorks = [
 
 <Layout title="Kite">
   <div
-    class="fixed bottom-[calc(max(4vw,3rem)*2)] -z-10 grid h-[calc(max(4vw,3rem)*4)] place-items-center overflow-hidden"
+    class="fixed inset-x-0 bottom-[calc(max(4vw,3rem)*2)] -z-10 grid h-[calc(max(4vw,3rem)*4)] place-items-center overflow-hidden"
   >
-    <figure class="h-px scale-y-[500] overflow-hidden">
+    <figure class="h-px w-full scale-y-[500] overflow-hidden">
       <div
         class="animate-[stretch-animation_var(--duration,150s)_linear_infinite]"
         style={`--duration: ${selectedWorks.length * 10}s;`}
       >
         {
           selectedWorks.map(({ slug }) => {
-            return <img src={`/images/works/${slug}.jpg`} />;
+            return (
+              <img
+                class="w-full"
+                src={`/images/works/${slug}.jpg`}
+                decoding="async"
+                alt=""
+                width="1920"
+                height="1080"
+              />
+            );
           })
         }
       </div>
