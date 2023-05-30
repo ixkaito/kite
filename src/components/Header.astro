@@ -107,11 +107,12 @@ const tagline = 'I Design, Develop and create crazy Things.';
   </nav>
   <button
     id="menu-toggle"
-    class="col-start-3 grid gap-4 text-left uppercase lg:hidden"
+    class="group col-start-3 grid gap-4 text-left uppercase lg:hidden"
     aria-expanded="false"
     aria-controls="menu"
   >
-    <span>Menu</span>
+    <span class="group-aria-expanded:hidden">Menu</span>
+    <span class="hidden group-aria-expanded:inline">Close</span>
     <span aria-hidden="true">{tagline}</span>
   </button>
 </header>
